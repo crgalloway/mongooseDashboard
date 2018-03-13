@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bees</title>
+</head>
+<body>
+	<h1>BEES!!!</h1>
+	<img src="https://media.giphy.com/media/dcubXtnbck0RG/giphy.gif">
+	<br>
+	<a href="/bees/new">Register new bees!</a>
+	<% for (var x in bees) { %>
+		<p><%= bees[x].name %></p>
+		<a href='/bees/<%= bees[x].id %>'>More Info</a>
+		<hr>
+	<% } %>
+</body>
+</html>

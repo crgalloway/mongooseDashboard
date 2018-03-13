@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Bee</title>
+</head>
+<body>
+<h1>Please edit bee info</h1>
+	<form action="/bees/<%= bee[0]['id'] %>" method="post">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="name" value="<%= bee[0]['name'] %>"></td>
+			</tr>
+			<tr>
+				<td>Age(in weeks):</td>
+				<td><input type="number" name="age" value="<%= bee[0]['age'] %>"></td>
+			</tr>
+			<tr>
+				<td>Caste:</td>
+				<td><select name="rank">
+					<% var options = [ "Worker", "Drone", "Queen" ]; %>
+					<% for ( var i = 0; i < options.length; i++ ) { %>
+					    <% var selected = ( bee[0]['rank'] == options[ i ] ) ? "selected" : ""; %>
+						<option value="<%=options[ i ] %>" <%= selected %> ><%= options[ i ] %></option>
+					<% } %>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Colony:</td>
+				<td><select name="colony">
+					<% var options = [ "GM1/11", "AK2/11", "TR5/14" ]; %>
+					<% for ( var i = 0; i < options.length; i++ ) { %>
+					    <% var selected = ( bee[0]['colony'] == options[ i ] ) ? "selected" : ""; %>
+						<option value="<%=options[ i ] %>" <%= selected %> ><%= options[ i ] %></option>
+					<% } %>
+				</select></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name=""></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
